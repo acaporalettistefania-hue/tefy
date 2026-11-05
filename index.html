@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VAS Beauty Store: productos para pestañas y cejas.">
+  <title>VAS Beauty Store | Belleza para tu mirada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="VAS Beauty Store, inicio">
+      <span class="brand-mark">VAS</span>
+      <span class="brand-subtitle">BEAUTY STORE</span>
+    </a>
+    <nav class="main-nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+    </nav>
+    <div class="header-actions">
+      <button id="themeButton" class="icon-button" aria-label="Cambiar modo de color" title="Modo oscuro">🌙</button>
+      <button id="favoritesButton" class="icon-button" aria-label="Ver favoritos" title="Favoritos">♡ <span id="favoriteCount">0</span></button>
+      <button id="cartButton" class="cart-button" aria-label="Abrir carrito">🛍️ Carrito <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">TU RUTINA, TU MOMENTO</p>
+        <h1>Realzamos tu mirada<br><em>con pequeños detalles.</em></h1>
+        <p>Encontrá todo lo que necesitás para cuidar y destacar tus pestañas y cejas.</p>
+        <a class="primary-button" href="#productos">Ver productos</a>
+      </div>
+      <div class="hero-decoration" aria-hidden="true">
+        <div class="hero-circle">VAS</div>
+        <span>BEAUTY<br>IS YOU</span>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Beneficios">
+      <div>♡ <span>Productos seleccionados</span></div>
+      <div>✧ <span>Amor por cada detalle</span></div>
+      <div>♡ <span>Comprá fácil y rápido</span></div>
+    </section>
+
+    <section class="products-section" id="productos">
+      <div class="section-heading">
+        <p class="eyebrow">NUESTRO CATÁLOGO</p>
+        <h2>Encontrá tus favoritos</h2>
+        <p>Elegí tus productos y agregalos al carrito.</p>
+      </div>
+
+      <div class="catalog-controls">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+        </label>
+        <select id="categoryFilter" aria-label="Filtrar por categoría">
+          <option value="todos">Todas las categorías</option>
+          <option value="pestanas">Pestañas</option>
+          <option value="cejas">Cejas</option>
+          <option value="accesorios">Accesorios</option>
+          <option value="cuidado">Cuidado</option>
+        </select>
+      </div>
+
+      <p id="resultsMessage" class="results-message" aria-live="polite"></p>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section class="about-section" id="nosotros">
+      <div class="about-stamp">VAS<br><small>BEAUTY</small></div>
+      <div>
+        <p class="eyebrow">SOBRE NOSOTROS</p>
+        <h2>La belleza está en los detalles.</h2>
+        <p>En VAS Beauty Store creemos que cada mirada es única. Por eso reunimos productos y accesorios para acompañarte en tu rutina de belleza.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="footer-brand" href="#">VAS BEAUTY STORE</a>
+    <p>© 2026 VAS Beauty Store · Proyecto educativo realizado con HTML, CSS y JavaScript.</p>
+  </footer>
+
+  <div id="cartOverlay" class="overlay" aria-hidden="true">
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <div><p class="eyebrow">TU SELECCIÓN</p><h2 id="cartTitle">Mi carrito</h2></div>
+        <button id="closeCart" class="close-button" aria-label="Cerrar carrito">×</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="total-line"><span>Total</span><strong id="cartTotal">$0</strong></div>
+        <button id="checkoutButton" class="primary-button checkout-button">Finalizar compra</button>
+        <p class="cart-note">Compra de demostración: no se realizan pagos reales.</p>
+      </div>
+    </aside>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
